@@ -1,0 +1,18 @@
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-02-22 08:23:06
+project setup --topLevelPackage com.mar.pm
+hint
+jpa setup --provider HIBERNATE --database H2_IN_MEMORY 
+hint
+entity jpa --class ~.domain.employee
+field string --fieldName firstName --notNull --sizeMin 1 --sizeMax 40
+field string --fieldName lastName --notNull --sizeMin 1 --sizeMax 40
+field string --fieldName email --notNull --sizeMin 1 --sizeMax 40
+entity jpa --class ~.domain.project
+focus --class ~.domain.Project
+field string --fieldName name --notNull --sizeMin 1 --sizeMax 120
+field string --fieldName description --notNull --sizeMin 1 --sizeMax 14000
+field list --fieldName employees --type ~.domain.Employee
+focus --class ~.domain.Employee
+field list --fieldName projects --type ~.domain.Project 
+q
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log closed at 2020-02-22 08:44:29

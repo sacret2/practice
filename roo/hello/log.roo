@@ -1,0 +1,11 @@
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-02-22 08:11:10
+project setup --topLevelPackage com.mar
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
+entity jpa --class ~.domain.Timer
+field string --fieldName message --notNull
+repository jpa --all
+service --all
+web mvc setup 
+web mvc view setup --type THYMELEAF
+web mvc controller --all --responseType THYMELEAF
+web mvc controller --all --pathPrefix /api
