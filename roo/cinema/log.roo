@@ -1,0 +1,27 @@
+// Spring Roo 2.0.0.RELEASE [rev 4a2e9f1] log opened at 2020-02-24 07:51:25
+project setup --topLevelPackage com.mar
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
+entity jpa --class ~.entities.Movie
+field string --fieldName title --notNull --
+entity jpa --class ~.entities.ScreeningRoom 
+field number --fieldName nbOfPlaces --type java.lang.Integer
+entity jpa --class ~.entities.Showing
+field date --fieldName showingDate --type java.util.Date
+field string --fieldName showingTime --notNull
+field reference --fieldName movie --type ~.entities.Movie --
+// [failed] field reference --fieldName movie --type ~.entities.Movie 
+entity jpa --class ~.entities.Ticket
+field reference --fieldName showing --type ~.entities.Showing 
+entity jpa --class ~.entities.Client
+field string --fieldName firstName --notNull 
+field string --fieldName lastName --notNull 
+field string --fieldName email --notNull --unique
+field list --fieldName tickets --type ~.entities.Ticket 
+hint
+repository jpa --all
+service --all 
+web mvc setup 
+web mvc view setup --type THYMELEAF 
+hint
+web mvc controller --all --responseType THYMELEAF 
+web mvc controller --all --pathPrefix /api

@@ -1,0 +1,18 @@
+<!--TABLE-->
+<div class="table-responsive" id="containerFields" data-th-fragment="ticket-entityModalConfirmBody" data-th-with="collectionLink=${@linkBuilder.of('TicketsCollectionThymeleafController')},itemLink=${@linkBuilder.of('TicketsItemThymeleafController')}">
+    <table id="ticket-entity-table-item-to-remove" data-data-load-url="${collectionLink.to('datatablesByIdsIn')}">
+      <thead>
+        <tr>
+          <th data-data="showing" data-th-text="#{label_ticket_showing}">showing</th>
+          <th data-data="client" data-th-text="#{label_ticket_client}">client</th>
+        </tr>
+      </thead>
+      <tbody data-th-remove="all">
+        <tr>
+          <td>showing</td>
+          <td>client</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<!-- /TABLE -->

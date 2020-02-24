@@ -1,0 +1,22 @@
+<!--TABLE-->
+<div class="table-responsive" id="containerFields" data-th-fragment="showing-entityModalConfirmBody" data-th-with="collectionLink=${@linkBuilder.of('ShowingsCollectionThymeleafController')},itemLink=${@linkBuilder.of('ShowingsItemThymeleafController')}">
+    <table id="showing-entity-table-item-to-remove" data-data-load-url="${collectionLink.to('datatablesByIdsIn')}">
+      <thead>
+        <tr>
+          <th data-data="showingDate" data-th-text="#{label_showing_showingdate}">showingDate</th>
+          <th data-data="showingTime" data-th-text="#{label_showing_showingtime}">showingTime</th>
+          <th data-data="movie" data-th-text="#{label_showing_movie}">movie</th>
+          <th data-data="ticket" data-th-text="#{label_showing_ticket}">ticket</th>
+        </tr>
+      </thead>
+      <tbody data-th-remove="all">
+        <tr>
+          <td>showingDate</td>
+          <td>showingTime</td>
+          <td>movie</td>
+          <td>ticket</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<!-- /TABLE -->
